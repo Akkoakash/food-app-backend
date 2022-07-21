@@ -1,5 +1,6 @@
 import express from "express";
 import { MongoClient } from "mongodb";
+import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -66,6 +67,7 @@ const foods =[
     }
   ];
 
+  app.use(cors());
   app.use(express.json());
 
   const MONGO_URL =  process.env.MONGO_URL;
